@@ -1,0 +1,12 @@
+{
+  "name": "Keet-copier",
+  "scripts": {
+    "test": "node copy.js"
+  },
+  "version": "1.0.0",
+  "main": "copy.js",
+  "license": "MIT",
+  "dependencies": {
+    "open": "^8.4.0"
+  }
+}
