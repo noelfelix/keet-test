@@ -1,5 +1,5 @@
 const assert = require("assert");
-const Copier = require("./Copier");
+const { Copier, error } = require("./Copier");
 const open = require("open");
 
 const defaultCopier = new Copier();
@@ -22,6 +22,11 @@ const objCopier = new Copier(obj);
   assert(objCopier.copy() !== obj);
 
   assert(JSON.stringify(objCopier.copy()) === JSON.stringify(obj));
+  try {
+    await defaultCopier.delete();
+  } catch (e) {
+    assert(e === error);
+  }
 
   open("https://getyarn.io/yarn-clip/97ac66c9-beb5-4489-b116-02120a8be4e6/gif");
 })();
